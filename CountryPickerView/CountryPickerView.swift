@@ -133,8 +133,8 @@ public class CountryPickerView: NibView {
                 let vc2 = vc.childViewControllers.last
                 showCountriesList(from: vc2 ?? vc)
             }
-      }
-
+        }
+    }
     
     public func showCountriesList(from viewController: UIViewController) {
         let countryVc = CountryPickerViewController(style: .grouped)
