@@ -124,15 +124,17 @@ public class CountryPickerView: NibView {
             showCountriesList(from: hostViewController)
             return
         }
+        
         if let vc = window?.topViewController {
             if let tabVc = vc as? UITabBarController,
                 let selectedVc = tabVc.selectedViewController {
                 showCountriesList(from: selectedVc)
             } else {
-                showCountriesList(from: vc)
+                let vc2 = vc.childViewControllers.last
+                showCountriesList(from: vc2 ?? vc)
             }
-        }
-    }
+      }
+
     
     public func showCountriesList(from viewController: UIViewController) {
         let countryVc = CountryPickerViewController(style: .grouped)
